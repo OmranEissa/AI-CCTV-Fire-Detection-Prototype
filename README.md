@@ -73,12 +73,11 @@ The results and their comparisons will be shown below.
 
 ### ⏱️ Results
 
-<p float="right">
-  <img src=src="https://github.com/user-attachments/assets/225af339-8be2-4f8a-8ab7-8e92e5750731" width="700"/>
-  <img src="attachment:008bd8ca-8bf3-4c72-8f35-45d1e82955fe.png" width="700" />
-</p>
+
 
 <img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/225af339-8be2-4f8a-8ab7-8e92e5750731" />
+
+<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/3d8da399-2fb8-4801-9fa1-2912377ca7f4" />
 
 
 
