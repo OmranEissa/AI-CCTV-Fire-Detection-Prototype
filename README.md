@@ -79,5 +79,6 @@ The results and their comparisons will be shown below.
 
 <img width="50%" height="600" alt="results7" title= "100 epochs" src="https://github.com/user-attachments/assets/3d8da399-2fb8-4801-9fa1-2912377ca7f4"/>
 </p>
-### 25 epochs                                                                                               100 epochs
+
+### 25 epochs                                         $~~~~~~~~~~~~~~~~~~~~~~~~~~~~$                                                      100 epochs
 
