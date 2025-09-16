@@ -74,11 +74,9 @@ The results and their comparisons will be shown below.
 ### ⏱️ Results
 
 
-<p float="left">
-<img width="50%" height="600" alt="results6" title="25 epochs" src="https://github.com/user-attachments/assets/225af339-8be2-4f8a-8ab7-8e92e5750731"/>
 
-<img width="50%" height="600" alt="results7" title= "100 epochs" src="https://github.com/user-attachments/assets/3d8da399-2fb8-4801-9fa1-2912377ca7f4"/>
-</p>
+<img width="50%" height="600" alt="results6" title="25 epochs" src="https://github.com/user-attachments/assets/225af339-8be2-4f8a-8ab7-8e92e5750731"/>. <img width="50%" height="600" alt="results7" title= "100 epochs" src="https://github.com/user-attachments/assets/3d8da399-2fb8-4801-9fa1-2912377ca7f4"/>
+
 
 ### 25 epochs $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ 100 epochs
 
