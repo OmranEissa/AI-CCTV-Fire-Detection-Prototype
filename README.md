@@ -74,10 +74,10 @@ The results and their comparisons will be shown below.
 ### ⏱️ Results
 
 
-
+<p float="middle">
 <img width="1600" height="600" alt="results" title="25 epochs" src="https://github.com/user-attachments/assets/225af339-8be2-4f8a-8ab7-8e92e5750731" />
 
 <img width="1200" height="600" alt="results" title= "100 epochs" src="https://github.com/user-attachments/assets/3d8da399-2fb8-4801-9fa1-2912377ca7f4" />
-
+</p>
 
 
