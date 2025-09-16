@@ -74,7 +74,8 @@ The results and their comparisons will be shown below.
 ### ⏱️ Results
 
 Solarized dark             |  Solarized Ocean
-:-------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------:
-![results.png]("https://github.com/user-attachments/assets/225af339-8be2-4f8a-8ab7-8e92e5750731)  |  ![results.png]([https://...Ocean.png](https://github.com/user-attachments/assets/3d8da399-2fb8-4801-9fa1-2912377ca7f4"))
+:-------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------:
+<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/1608ca5c-026a-46e7-b90b-9983ef55e73e" /> |  ![results.png]([https://...Ocean.png](https://github.com/user-attachments/assets/3d8da399-2fb8-4801-9fa1-2912377ca7f4"))
 ### 25 epochs $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ 100 epochs
+
 
