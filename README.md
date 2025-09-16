@@ -18,3 +18,64 @@ pip install ultralytics
 from ultralytics import YOLO
 
 ```
+
+### 🏋️ Training
+
+/Fire-Prototype.ipynb was set up for the training and deployment of the model. For training, a Kaggle fire dataset was downloaded and saved in the /data folder.
+
+A .yaml file was created to read the data and use it for training.
+
++ .yaml file
+    ```
+    yaml_content = """
+    train: data/train/images
+    val:   data/valid/images
+    test:  data/test/images
+
+
+    nc: 1
+    names: ['fire']
+    """
+    ```
+    ```
+    with open("fire.yaml", "w") as f:
+        f.write(yaml_content)
+    ```
+
+A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire dataset. The model was trained with 25 epochs of 16 image batches with imgsz 640.
+
++ Train
+    ```
+    model = YOLO("yolov8n.pt")
+    results = model.train(
+    data = "fire.yaml",
+    epochs = 100,
+    imgsz = 640,
+    batch = 16
+)
+
+
+Due to low accuracy and undesirable results, the model was further trained with 100 epochs.
+```
+model = YOLO("runs/detect/train6/weights/best.pt")
+results = model.train(
+    data = "fire.yaml",
+    epochs = 100,
+    imgsz = 640,
+    batch = 16
+)
+```
+
+
+
+The results and their comparisons will be shown below.
+
+
+### ⏱️ Results
+
+<p float="right">
+  <img src="attachment:a3ca6766-0822-4f9a-abc3-b5089826ff88.png" width="700"/>
+  <img src="attachment:008bd8ca-8bf3-4c72-8f35-45d1e82955fe.png" width="700" />
+</p>
+
+
