@@ -81,9 +81,9 @@ The results and their comparisons will be shown below.
 
 ### 🔥 YOLOv8 Training Results
 
-| Metric              | Description                                        | 25 Epochs (Old) | 100 Epochs (New) |
+| Metric               | Description                                          | 25 Epochs     | 100 Epochs  |
 |----------------------|----------------------------------------------------|----------------|-----------------|
-| **train/box_loss**    | Bounding box localization loss (lower = better)     | ~1.6–2.0        | **~0.8–1.0**     |
+| **train/box_loss**    | Bounding box localization loss     | ~1.6–2.0        | **~0.8–1.0**     |
 | **train/cls_loss**    | Classification loss (lower = better)                | ~3.0            | **~1.0**         |
 | **train/dfl_loss**    | Distribution focal loss (box precision)             | ~1.6             | **~1.0**         |
 | **val/box_loss**      | Validation bounding box loss                         | ~2.2             | **~1.8**         |
