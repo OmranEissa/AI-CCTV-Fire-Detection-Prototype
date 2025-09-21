@@ -175,8 +175,12 @@ cv2.destroyAllWindows()
 ### Alerts and Dashboard
 #### This is what the Dashboard looks like with all 10 cameras and the logged alerts.
 
-|Dashboard   | Alerts 
-|-------------|---------
-| <img width="1274" height="749" alt="Screenshot 2025-09-15 134817" src="https://github.com/user-attachments/assets/02ba2298-d706-4991-8766-7254e2012dcc" /> |<img width="952" height="320" alt="Screenshot 2025-09-21 110751" src="https://github.com/user-attachments/assets/39cc34e4-7715-46e1-8c82-15221f5229ba" />
+|Dashboard   
+|-------------
+| <img width="1274" height="749" alt="Screenshot 2025-09-15 134817" src="https://github.com/user-attachments/assets/02ba2298-d706-4991-8766-7254e2012dcc" /> 
+
+
+|Alerts
+|<img width="952" height="320" alt="Screenshot 2025-09-21 110751" src="https://github.com/user-attachments/assets/39cc34e4-7715-46e1-8c82-15221f5229ba" />
 
 
