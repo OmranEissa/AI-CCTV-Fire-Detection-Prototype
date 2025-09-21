@@ -62,16 +62,10 @@ A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire
 
 
 
-| Metric                   | Description                                            | 25 Epochs      | 100 Epochs       |
+| BoxF1 Curve  | BoxP Curve      |BoxPR Curve      | BoxR Curve
 |--------------------------|--------------------------------------------------------|----------------|------------------|
-| **train/box_loss**       | Bounding box localization loss                         | ~1.6–2.0       | **~0.8–1.0**     |
-| **train/cls_loss**       | Classification loss                                    | ~3.0           | **~1.0**         |
-| **train/dfl_loss**       | Distribution focal loss (box precision)                | ~1.6           | **~1.0**         |
-| **val/box_loss**         | Validation bounding box loss                           | ~2.2           | **~1.8**         |
-| **val/cls_loss**         | Validation classification loss                         | ~3.8–4.0       | **~2.0**         |
-| **val/dfl_loss**         | Validation dfl loss                                    | ~2.1           | **~1.8**         |
-| **metrics/precision(B)** | % of predicted detections that were correct            | ~0.9           | **~0.8**         |
-| **metrics/recall(B)**    | % of actual objects correctly detected                 | ~0.3           | **~0.5**         |
-| **metrics/mAP50(B)**     | Avg precision @ IoU 0.5                                | ~0.4           | **~0.5**         |
-| **metrics/mAP50-95(B)**  | Avg precision @ IoU 0.5–0.95                           | ~0.20          | **~0.27**        |
+|   <img width="2250" height="1500" alt="BoxF1_curve" src="https://github.com/user-attachments/assets/4cf8f32e-bf63-4109-b1ea-2303da04a029" /> |   <img width="2250" height="1500" alt="BoxP_curve" src="https://github.com/user-attachments/assets/b605d32e-f574-4b45-931e-67109d0dbfca" />
+    | <img width="2250" height="1500" alt="BoxPR_curve" src="https://github.com/user-attachments/assets/5542e4af-aefb-4a53-ba69-ba0e235e3343" />
+  |<img width="2250" height="1500" alt="BoxR_curve" src="https://github.com/user-attachments/assets/2858f934-ffc2-4b0a-b640-f82e67db16b8" />
+
 
