@@ -71,3 +71,8 @@ A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire
 |BoxPR Curve      | BoxR Curve
 |-----------------|---------------
 | <img width="2250" height="1500" alt="BoxPR_curve" src="https://github.com/user-attachments/assets/5542e4af-aefb-4a53-ba69-ba0e235e3343" /> |<img width="2250" height="1500" alt="BoxR_curve" src="https://github.com/user-attachments/assets/2858f934-ffc2-4b0a-b640-f82e67db16b8" />
+
+
+|Metrics 
+|--------
+|<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/a86a5f24-6285-4bce-8110-1bc3888cc684" />
