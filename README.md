@@ -88,7 +88,7 @@ A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire
 import cv2, numpy as np, time, json
 from ultralytics import YOLO
 
-#Video inputs
+# Video inputs
 sources = [
     "CCTV1.mp4","CCTV2.mp4","CCTV3.mp4",
     "CCTV4.mp4","CCTV5.mp4","CCTV6.mp4", "CCTV7.mp4","CCTV8.mp4",
@@ -185,3 +185,59 @@ cv2.destroyAllWindows()
 |<img width="952" height="320" alt="Screenshot 2025-09-21 110751" src="https://github.com/user-attachments/assets/39cc34e4-7715-46e1-8c82-15221f5229ba" />
 
 
+
+### 🚀 Deployment 
+##### Now we export our model in a deployable format (ONNX). 
+
+````
+import onnxruntime as ort
+
+session = ort.InferenceSession("runs/detect/train4/weights/best.onnx")
+
+# 2) Define one video source (replace with RTSP URL or MP4)
+source = "CCTV8.mp4"
+cap = cv2.VideoCapture(source)
+
+cv2.namedWindow("ONNX Camera", cv2.WINDOW_NORMAL)  # make window resizable
+cv2.resizeWindow("ONNX Camera", 640, 480)
+
+# 3) Preprocessing function
+def preprocess(frame, img_size=640):
+    # Resize to model size (640x640)
+    img = cv2.resize(frame, (img_size, img_size))
+    # Convert HWC → CHW (channels first)
+    img = img.transpose((2, 0, 1))
+    # Normalize (0-1 range)
+    img = img / 255.0
+    # Add batch dimension
+    img = np.expand_dims(img, axis=0).astype(np.float32)
+    return img
+
+# 4) Main loop
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        print("Camera offline or video ended")
+        break
+
+    # Preprocess frame
+    img = preprocess(frame)
+
+    # Run inference
+    outputs = session.run(None, {"images": img})
+
+    # TODO: Parse YOLO outputs into boxes, scores, classes
+    # For now, just show "Processed"
+    cv2.putText(frame, "Processed", (30, 30),
+                cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+
+    # Show video
+    cv2.imshow("ONNX Camera", frame)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Cleanup
+cap.release()
+cv2.destroyAllWindows()
+````
