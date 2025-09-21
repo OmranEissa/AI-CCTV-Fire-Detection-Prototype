@@ -76,3 +76,99 @@ A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire
 |Metrics 
 |--------
 |<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/a86a5f24-6285-4bce-8110-1bc3888cc684" />
+
+
+
+
+### Code 
+
+#### This is where we implement the CCTV part of the projecy and the alert system and the dashboard on which the CCTV cameras will be displayed.
+
+```
+import cv2, numpy as np, time, json
+from ultralytics import YOLO
+
+#Video inputs
+sources = [
+    "CCTV1.mp4","CCTV2.mp4","CCTV3.mp4",
+    "CCTV4.mp4","CCTV5.mp4","CCTV6.mp4", "CCTV7.mp4","CCTV8.mp4",
+    "CCTV9.mp4", "CCTV10.mp4"
+]
+caps = [cv2.VideoCapture(src) for src in sources]
+model = YOLO("runs/detect/train4/weights/best.pt")
+
+
+frame_skip = 1
+frame_count = 0
+target_size = (320, 240)  # bigger size → better quality
+
+#Resizing window to viewable size.
+cv2.namedWindow("Control Room", cv2.WINDOW_NORMAL)
+cv2.resizeWindow("Control Room", 1280, 720)
+
+#Function to log and store alerts.
+def AlertLog(cam_id, cls, conf, bbox, ts):
+    alert = {"camera":cam_id+1,"class":cls,"conf":round(conf,3),
+             "bbox":bbox,"timestamp":ts}
+    with open("alerts.jsonl","a") as f: f.write(json.dumps(alert)+"\n")
+    print("ALERT:", alert)
+
+while True:
+    frames = []
+    frame_count += 1
+
+    for cam_id, cap in enumerate(caps):
+        ret, frame = cap.read()
+
+        # loop video if ended
+        if not ret or frame is None:
+            cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+            ret, frame = cap.read()
+
+        if not ret or frame is None:
+            # If camera is offline
+            frame = np.zeros((target_size[1], target_size[0], 3), np.uint8)
+            cv2.putText(frame, f"Camera {cam_id +1} Offline", (30, 120),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,255), 2)
+        else:
+            frame = cv2.resize(frame, target_size)
+            cv2.putText(frame, f"Cam {cam_id +1 }", (5, 20),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255,255,255), 2)
+
+            if frame_count % frame_skip == 0:
+                results = model.predict(frame, conf=0.25, verbose=False)
+                for r in results:
+                    for box in r.boxes:
+                        conf = float(box.conf[0])
+                        if conf >= 0.80:
+                            x1, y1, x2, y2 = map(int, box.xyxy[0])
+                            cls_id = int(box.cls[0])
+                            cls = r.names[cls_id]
+                            ts = time.strftime("%Y-%m-%d %H:%M:%S")
+                            AlertLog(cam_id, cls, conf, [x1,y1,x2,y2], ts)
+                            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 1)
+                            cv2.putText(frame, f"{cls} {conf:.2f}",
+                                        (x1, max(0, y1 - 5)),
+                                        cv2.FONT_HERSHEY_SIMPLEX, 0.4,
+                                        (0, 0, 255), 1)
+
+        frames.append(frame)
+
+    # grid
+    row1 = np.hstack(frames[:5])
+    row2 = np.hstack(frames[5:])
+    grid = np.vstack([row1, row2])
+
+    # scale to fit screen
+    display_grid = cv2.resize(grid, (1280, 720), interpolation=cv2.INTER_LINEAR)
+
+    cv2.imshow("Control Room", display_grid)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+    time.sleep(0.01)
+
+for cap in caps: cap.release()
+cv2.destroyAllWindows()
+
+```
