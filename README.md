@@ -42,40 +42,23 @@ A .yaml file was created to read the data and use it for training.
         f.write(yaml_content)
     ```
 
-A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire dataset. The model was trained with 25 epochs of 16 image batches with imgsz 640.
+A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire dataset. The model was trained with 100 epochs of 8 image batches with imgsz 640. A large [dataset](https://universe.roboflow.com/situational-awarnessinnovsense/fire-detection-ypseh) of almost 10,000 images was used. The dataset can be found here 
 
 + Train
     ```
-    model = YOLO("yolov8n.pt")
+  model = YOLO("yolov8n.pt")
     results = model.train(
-    data = "fire.yaml",
+    data = "fire1.yaml",
     epochs = 100,
     imgsz = 640,
-    batch = 16
+    batch = 8
 )
 
-
-Due to low accuracy and undesirable results, the model was further trained with 100 epochs.
-```
-model = YOLO("runs/detect/train6/weights/best.pt")
-results = model.train(
-    data = "fire.yaml",
-    epochs = 100,
-    imgsz = 640,
-    batch = 16
-)
-```
-
-
-
-The results and their comparisons will be shown below.
 
 
 ### ⏱️ Results
 
-25 epochs          |  100 epochs
-:-------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------:
-<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/94fb4368-b812-45eb-ae08-45bbdb3ce32d" /> | <img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/1608ca5c-026a-46e7-b90b-9983ef55e73e" /> 
+
 
 
 
