@@ -181,6 +181,7 @@ cv2.destroyAllWindows()
 
 
 |Alerts
+|-------
 |<img width="952" height="320" alt="Screenshot 2025-09-21 110751" src="https://github.com/user-attachments/assets/39cc34e4-7715-46e1-8c82-15221f5229ba" />
 
 
