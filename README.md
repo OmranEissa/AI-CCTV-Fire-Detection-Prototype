@@ -38,7 +38,7 @@ A .yaml file was created to read the data and use it for training.
     """
     ```
     ```
-    with open("fire.yaml", "w") as f:
+    with open("fire1.yaml", "w") as f:
         f.write(yaml_content)
     ```
 
