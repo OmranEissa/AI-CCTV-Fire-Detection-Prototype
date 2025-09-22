@@ -52,7 +52,7 @@ A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire
     epochs = 100,
     imgsz = 640,
     batch = 8
-)
+    )
 
 
 
