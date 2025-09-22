@@ -120,7 +120,7 @@ while True:
     for cam_id, cap in enumerate(caps):
         ret, frame = cap.read()
 
-        # loop video if ended
+        # Looping video
         if not ret or frame is None:
             cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
             ret, frame = cap.read()
