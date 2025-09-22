@@ -64,8 +64,7 @@ A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire
 
 | Ground Truth       | Prediction 
 |--------------------|-----------------
-|![val_batch1_labels](https://github.com/user-attachments/assets/314c9b90-22fa-46fb-b030-6122d4583314)
-| ![val_batch1_pred](https://github.com/user-attachments/assets/2f45d8b4-d67b-40eb-8b42-a3dcb8b378a0)
+|![val_batch1_labels](https://github.com/user-attachments/assets/314c9b90-22fa-46fb-b030-6122d4583314) | ![val_batch1_pred](https://github.com/user-attachments/assets/2f45d8b4-d67b-40eb-8b42-a3dcb8b378a0)
 
 
 
