@@ -100,7 +100,7 @@ model = YOLO("runs/detect/train4/weights/best.pt")
 
 frame_skip = 1
 frame_count = 0
-target_size = (320, 240)  # bigger size → better quality
+target_size = (320, 240)  
 
 #Resizing window to viewable size.
 cv2.namedWindow("Control Room", cv2.WINDOW_NORMAL)
