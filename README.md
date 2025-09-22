@@ -244,3 +244,7 @@ cv2.destroyAllWindows()
 
 
 ### 🔗 References
+
++ <https://github.com/spacewalk01/yolov5-fire-detection?tab=readme-ov-file#readme>
++ <https://www.youtube.com/watch?v=-RDeVPHipZU>
++ <https://www.youtube.com/watch?v=FBavXyN18K8&list=PL4Cc4cDq3t9mCdZ3t0czemfz7VwPdSjj9>
