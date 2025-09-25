@@ -121,7 +121,7 @@ sources = [
     "CCTV9.mp4", "CCTV10.mp4"
 ]
 caps = [cv2.VideoCapture(src) for src in sources]
-model = YOLO("runs/detect/train4/weights/best.pt")
+model = YOLO("runs/detect/train5/weights/best.pt")
 
 
 frame_skip = 1
