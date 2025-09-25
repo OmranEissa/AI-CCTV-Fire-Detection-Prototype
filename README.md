@@ -70,7 +70,15 @@ The resulting model was them further trained on 50 epochs to stabilize the resul
 
 ### ⏱️ Results
 
+#### Comparison of the two runs 
+ These two graphs show us how the the second run stabilized the model and gave us better efficiency and accuracy, in half the epochs.
+
+|100 Epochs (1st Run) | 50 Epochs (2nd Run) 
+|---------------------| --------------------
+|<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/a86a5f24-6285-4bce-8110-1bc3888cc684" />|  <img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/58b6f664-4169-4208-b15f-cbeb6d75d931" />
+  
 #### Prediction Results  
+Prediction results and metrics of the  model.
 
 | Ground Truth       | Prediction 
 |--------------------|-----------------
@@ -93,10 +101,7 @@ The resulting model was them further trained on 50 epochs to stabilize the resul
 | <img width="2250" height="1500" alt="BoxPR_curve" src="https://github.com/user-attachments/assets/53dfd239-8c0c-4871-a1a6-7989da19cde4" /> |<img width="2250" height="1500" alt="BoxR_curve" src="https://github.com/user-attachments/assets/7eda9150-4b9d-4f91-a277-cf8f982c07a3" />
 
 
-|100 Epochs (1st Run) | 50 Epochs (2nd Run) 
-|---------------------| --------------------
-|<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/a86a5f24-6285-4bce-8110-1bc3888cc684" />|  <img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/58b6f664-4169-4208-b15f-cbeb6d75d931" />
-  
+
 
 
 
