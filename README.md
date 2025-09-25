@@ -55,7 +55,17 @@ A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire
     )
     ```
 
+The resulting model was them further trained on 50 epochs to stabilize the results and maximize performance. 
 
+     ```
+  model = YOLO("runs/detect/train4/weights/best.pt")
+    results = model.train(
+    data = "fire1.yaml",
+    epochs = 100,
+    imgsz = 640,
+    batch = 8
+    )
+    ```
 
 
 ### ⏱️ Results
@@ -64,7 +74,8 @@ A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire
 
 | Ground Truth       | Prediction 
 |--------------------|-----------------
-|![val_batch1_labels](https://github.com/user-attachments/assets/314c9b90-22fa-46fb-b030-6122d4583314) | ![val_batch1_pred](https://github.com/user-attachments/assets/2f45d8b4-d67b-40eb-8b42-a3dcb8b378a0)
+|![val_batch2_labels](https://github.com/user-attachments/assets/d3540838-7eb0-443c-a570-62fb93557537) | ![val_batch2_pred](https://github.com/user-attachments/assets/f54d67e6-0188-4816-9c54-e70d23127c58)
+
 
 
 
@@ -72,18 +83,20 @@ A  YOLOv8 nano model was chosen as the base model and  fine-tuned using the fire
 
 | BoxF1 Curve  | BoxP Curve    
 |--------------------------|--------------------------------------------------------
-|   <img width="2250" height="1500" alt="BoxF1_curve" src="https://github.com/user-attachments/assets/4cf8f32e-bf63-4109-b1ea-2303da04a029" /> |   <img width="2250" height="1500" alt="BoxP_curve" src="https://github.com/user-attachments/assets/b605d32e-f574-4b45-931e-67109d0dbfca" /> 
+|  <img width="2250" height="1500" alt="BoxF1_curve" src="https://github.com/user-attachments/assets/124a00eb-b834-4624-8ba8-f6a0aea6f23c" /> | <img width="2250" height="1500" alt="BoxP_curve" src="https://github.com/user-attachments/assets/69c5b342-46c9-4eaa-8611-47e58f664f19" />
+
 
 
 
 |BoxPR Curve      | BoxR Curve
 |-----------------|---------------
-| <img width="2250" height="1500" alt="BoxPR_curve" src="https://github.com/user-attachments/assets/5542e4af-aefb-4a53-ba69-ba0e235e3343" /> |<img width="2250" height="1500" alt="BoxR_curve" src="https://github.com/user-attachments/assets/2858f934-ffc2-4b0a-b640-f82e67db16b8" />
+| <img width="2250" height="1500" alt="BoxPR_curve" src="https://github.com/user-attachments/assets/53dfd239-8c0c-4871-a1a6-7989da19cde4" /> |<img width="2250" height="1500" alt="BoxR_curve" src="https://github.com/user-attachments/assets/7eda9150-4b9d-4f91-a277-cf8f982c07a3" />
 
 
-|Metrics 
-|--------
-|<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/a86a5f24-6285-4bce-8110-1bc3888cc684" />
+|100 Epochs (1st Run) | 50 Epochs (2nd Run) 
+|---------------------| --------------------
+|<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/a86a5f24-6285-4bce-8110-1bc3888cc684" />|  <img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/58b6f664-4169-4208-b15f-cbeb6d75d931" />
+  
 
 
 
